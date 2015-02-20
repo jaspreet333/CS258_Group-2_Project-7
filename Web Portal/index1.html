@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+#map-canvas {
+        width: 550px;
+        height: 300px;
+      }
+#pagebody { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+#pagebody-inner { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+
+#alpha, #beta, #gamma, #delta {
+    display: inline; /* DO NOT EDIT */
+    position: inherit !important; /* DO NOT EDIT */
+    float: left; /* DO NOT EDIT */
+    min-height: 1px; /* DO NOT EDIT */
+}
+
+
+#dropnav 
+{height:25px; } 
+
+#dropnav ul
+{margin:0px; padding:0px;}
+
+#dropnav ul li
+{display:inline; float:left; list-style:none; margin-left:15px; position:relative; height:25px; width:80px;} /* only edit the last 2 items - sets the width of the main menu */
+
+#dropnav li a
+{color:#FFF; text-decoration:none;} /* Changes the link color of items on the main menu */
+
+#dropnav li a:hover
+{color:#02ACEE; text-decoration:none;}/* Changes the hover color of items on the main menu */
+
+#dropnav li ul
+{margin:0px; padding:0px; display:none; position:absolute; left:-15px; z-index: 99; top:40px} /* Only edit the last 2 items - set the top margin and background color of the submenus */
+
+#dropnav li:hover ul
+{display:block; width:250px;height: 25px;} /* sets the width of the submenus */
+
+#dropnav li li
+{list-style:none; display:list-item;} /* DO NOT EDIT */
+
+#dropnav li li a
+{color:#000; text-decoration:none;} /* Changes the link color of items in the submenu */
+
+#dropnav li li a:hover
+{color:#900; text-decoration:none;} /* Changes the hover color of items in the submenu */
+
+li#main  {padding-top: 2px;} /* Sets the padding of items in the main menu */
+
+</style>
+<title>Alumni Web Portal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+<script type="text/javascript" src="layout/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="layout/scripts/jquery.slidepanel.setup.js"></script>
+<!-- Homepage Only Scripts -->
+<script type="text/javascript" src="layout/scripts/jquery.cycle.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#featured_slide').after('<div id="fsn"><ul id="fs_pagination">').cycle({
+        timeout: 5000,
+        fx: 'fade',
+        pager: '#fs_pagination',
+        pause: 1,
+        pauseOnPagerHover: 0
+    });
+});
+</script>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(22, 77),
+          zoom: 2,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+<!-- End Homepage Only Scripts -->
+</head>
+
+<body>
+<div class="wrapper col0">
+  <div id="topbar">
+    <div id="slidepanel">
+      <div class="topbox">
+        <h2>Login</h2>
+        <p>*************</p>
+        <p class="readmore"><a href="#">Register Here &raquo;</a></p>
+      </div>
+      <div class="topbox">
+        <h2>Administrator Login Here</h2>
+        <form action="#" method="post">
+          <fieldset>
+           <label for="teachername">Username:
+              <input type="text" name="teachername" id="teachername" value="" />
+            </label>
+            <label for="teacherpass">Password:
+              <input type="password" name="teacherpass" id="teacherpass" value="" />
+            </label>
+            <label for="teacherremember">
+              <input class="checkbox" type="checkbox" name="teacherremember" id="teacherremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="teacherlogin" id="teacherlogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="teacherreset" id="teacherreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <div class="topbox last">
+        <h2>Alumni Login Here</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Pupils Login Form</legend>
+            <label for="pupilname">Username:
+              <input type="text" name="pupilname" id="pupilname" value="" />
+            </label>
+            <label for="pupilpass">Password:
+              <input type="password" name="pupilpass" id="pupilpass" value="" />
+            </label>
+            <label for="pupilremember">
+              <input class="checkbox" type="checkbox" name="pupilremember" id="pupilremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="pupillogin" id="pupillogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="pupilreset" id="pupilreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <br class="clear" />
+    </div>
+    <div id="loginpanel">
+      <ul>
+        <li class="left"> </li>
+        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">Log In	Here &raquo;</a><a id="closeit" style="display: none;" href="#slidepanel">Close Panel</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="index.html">Alumni Portal</a></h1>
+      <p><h4>IIT Indore</h4></p>
+    </div>
+    <div id="centernav">
+    <div id="dropnav">
+        <ul>
+
+            <li id="main">
+            <a href="#">Home</a>
+
+            </li>
+
+            <li id="main">
+            <a href="#">Batches</a>
+                <ul id="subnav">
+                      <li><a href="#">2014</a></li>
+                      <li><a href="#">2013</a></li>
+                      <li><a href="#">2012</a></li>
+                      <li><a href="#">2011</a></li>
+                </ul>            
+            </li>
+
+            <li id="main">
+            <a href="#">Gallery</a>            
+            </li>
+
+            <li id="main">
+            <a href="#">blog & discuss</a>           
+            </li>
+			<li id="main">
+            <a href="#">About us</a>           
+            </li>
+
+        </ul>    
+    </div>
+</div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="featured_slide">
+    <div class="featured_box"><a href="#"><img src="images/demo/central.jpg" alt="" /></a>
+      <div class="floater">
+        <h2>1. Upcoming campus at Simrol</h2>
+        <p>Orcimagna rhoncus et a nec antesque sed temportor pellus nibh conseque. Accumstsemper wisi pretium feugiat non ut eleifendrerisque at et condisse sce. Iaculumorci congue nam mollis odio id cras orci vestique euisquet at. Donecconsectetus lacilis ac pellus nam nibh curabitur sed anterdum nectetus adipis. Pretiummagnisse antes nunc pretium convallis tincidunt non at rutrumt.</p>
+        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+      </div>
+    </div>
+    <div class="featured_box"><a href="#"><img src="images/demo/22.jpg" alt="" /></a>
+      <div class="floater">
+        <h2>2. Scopus h Index</h2>
+        <p>According to the scopus h index, IIT Indore ranks first in the research quality among the new IIT's. </p>
+        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+      </div>
+    </div>
+    <div class="featured_box"><a href="#"><img src="images/demo/3.jpg" alt="" /></a>
+      <div class="floater">
+        <h2>3. Industry Academia Conclave</h2>
+        <p>The objective of the Conclave is to bring together experts from the industry and R&D organisations to communally discuss some prime issues concerning the relationship between industry and academia based on current societal requirement. The major attributes of the conclave enthral technical talks by keynote speakers exploring avenues of possible fusion pertaining to research & consultancy.</p>
+        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+      </div>
+    </div>
+    <div class="featured_box"><a href="#"><img src="images/demo/450x300.gif" alt="" /></a>
+      <div class="floater">
+        <h2>4. 2nd Convocation</h2>
+        <p>The Institute is organized its Second Convocation Ceremony on 5th June 2014, in which 119 B.Tech. students and 4 Ph.D. students would be awarded their degrees.Bharat Ratna Dr. A. P. J. Abdul Kalam, Former President of India, will be the Chief Guest.</p>
+        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+      </div>
+    </div>
+    <div class="featured_box"><a href="#"><img src="images/demo/450x300.gif" alt="" /></a>
+      <div class="floater">
+        <h2>5. Nullain convallis ris elis</h2>
+        <p>Nullamcorpervivamus nisl in sed adipit donec feugiat lor vel velit volutpat. Wisihabitur diculisi ac curabitur cursuspendreris sociis sed eger ipsum condisse laculis. Curabiturid non eu curabitae nibh por nullamcorper at nibh elis fring. Vestnibh congue praesenenatis justo et maecenasceleifend senterdum malesuada at dolor amet. Turisristibulum curabitae eros leo at interd.</p>
+        <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="homecontent">
+    <div class="fl_left">
+      <div class="column2">
+        <ul>
+          <li>
+            <h2>Faculties@IIT-I</h2>
+            <div class="imgholder"><img src="images/demo/240x130.gif" alt="" /></div>
+            <p>Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.</p>
+            <p>Urnau ltrices quis curabitur pha sellent esque congue magnisve stib ulum quismodo nulla et feugiat. Adipisciniap ellentum leo ut consequam.</p>
+            <p class="readmore"><a href="http://www.iiti.ac.in/People/faculty.html">Continue Reading &raquo;</a></p>
+          </li>
+          <li class="last">
+            <h2>Placements@IIT-I</h2>
+            <div class="imgholder"><img src="images/demo/240x130.gif" alt="" /></div>
+            <p>Nullamlacus dui ipsum conseqlo borttis non euisque morbipen a sdapibulum orna.</p>
+            <p>Urnau ltrices quis curabitur pha sellent esque congue magnisve stib ulum quismodo nulla et feugiat. Adipisciniap ellentum leo ut consequam.</p>
+            <p class="readmore"><a href="http://placement.iiti.ac.in/">Continue Reading &raquo;</a></p>
+          </li>
+        </ul>
+        <br class="clear" />
+      </div>
+      <div class="column2">
+        <h2>MAP OF OUR ALUMINI MEMBERS</h2>
+         <div id="map-canvas"></div>
+      </div>
+    </div>
+    <div class="fl_right">
+      <h2>Latest From The School Blog</h2>
+      <ul>
+        <li>
+          <div class="imgholder"><a href="#"><img src="images/demo/80x80.gif" alt="" /></a></div>
+          <p><strong><a href="#">Atnatis dolor tincidunt nulla</a></strong></p>
+          <p>Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.</p>
+        </li>
+        <li>
+          <div class="imgholder"><a href="#"><img src="images/demo/80x80.gif" alt="" /></a></div>
+          <p><strong><a href="#">Atnatis dolor tincidunt nulla</a></strong></p>
+          <p>Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.</p>
+        </li>
+        <li>
+          <div class="imgholder"><a href="#"><img src="images/demo/80x80.gif" alt="" /></a></div>
+          <p><strong><a href="#">Atnatis dolor tincidunt nulla</a></strong></p>
+          <p>Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.</p>
+        </li>
+        <li>
+          <div class="imgholder"><a href="#"><img src="images/demo/80x80.gif" alt="" /></a></div>
+          <p><strong><a href="#">Atnatis dolor tincidunt nulla</a></strong></p>
+          <p>Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.</p>
+        </li>
+        <li class="last">
+          <div class="imgholder"><a href="#"><img src="images/demo/80x80.gif" alt="" /></a></div>
+          <p><strong><a href="#">Atnatis dolor tincidunt nulla</a></strong></p>
+          <p>Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.</p>
+        </li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="footer">
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox last">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col5">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>

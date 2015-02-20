@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+<style>
+form { width: 400px; }
+label { float: left; width: 150px; }
+input[type=text] { float: left; width: 250px; }
+input[type=textarea] { float: left; width: 250px; }
+input[type=password] { float: left; width: 250px; }
+.clear { clear: both; height: 0; line-height: 0; }
+.floatright { float: right; }
+
+#map-canvas {
+        width: 550px;
+        height: 300px;
+      }
+#pagebody { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+#pagebody-inner { position: inherit !important; width: 100%; } /* DO NOT EDIT */
+
+#alpha, #beta, #gamma, #delta {
+    display: inline; /* DO NOT EDIT */
+    position: inherit !important; /* DO NOT EDIT */
+    float: left; /* DO NOT EDIT */
+    min-height: 1px; /* DO NOT EDIT */
+}
+
+
+#dropnav 
+{height:25px; } 
+
+#dropnav ul
+{margin:0px; padding:0px;}
+
+#dropnav ul li
+{display:inline; float:left; list-style:none; margin-left:15px; position:relative; height:25px; width:80px;} /* only edit the last 2 items - sets the width of the main menu */
+
+#dropnav li a
+{color:#FFF; text-decoration:none;} /* Changes the link color of items on the main menu */
+
+#dropnav li a:hover
+{color:#02ACEE; text-decoration:none;}/* Changes the hover color of items on the main menu */
+
+#dropnav li ul
+{margin:0px; padding:0px; display:none; position:absolute; left:-15px; z-index: 99; top:40px} /* Only edit the last 2 items - set the top margin and background color of the submenus */
+
+#dropnav li:hover ul
+{display:block; width:250px;height: 25px;} /* sets the width of the submenus */
+
+#dropnav li li
+{list-style:none; display:list-item;} /* DO NOT EDIT */
+
+#dropnav li li a
+{color:#000; text-decoration:none;} /* Changes the link color of items in the submenu */
+
+#dropnav li li a:hover
+{color:#900; text-decoration:none;} /* Changes the hover color of items in the submenu */
+
+li#main  {padding-top: 2px;} /* Sets the padding of items in the main menu */
+
+</style>
+<title>School Education | Full Width</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
+<script type="text/javascript" src="../layout/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="../layout/scripts/jquery.slidepanel.setup.js"></script>
+</head>
+<body>
+<div class="wrapper col0">
+  <div id="topbar">
+    <div id="slidepanel">
+      <div class="topbox">
+        <h2>Login</h2>
+        <p>*************</p>
+        <p class="readmore"><a href="#">Register Here &raquo;</a></p>
+      </div>
+      <div class="topbox">
+        <h2>Administrator Login Here</h2>
+        <form action="#" method="post">
+          <fieldset>
+           <label for="teachername">Username:
+              <input type="text" name="teachername" id="teachername" value="" />
+            </label>
+            <label for="teacherpass">Password:
+              <input type="password" name="teacherpass" id="teacherpass" value="" />
+            </label>
+            <label for="teacherremember">
+              <input class="checkbox" type="checkbox" name="teacherremember" id="teacherremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="teacherlogin" id="teacherlogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="teacherreset" id="teacherreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <div class="topbox last">
+        <h2>Alumni Login Here</h2>
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Pupils Login Form</legend>
+            <label for="pupilname">Username:
+              <input type="text" name="pupilname" id="pupilname" value="" />
+            </label>
+            <label for="pupilpass">Password:
+              <input type="password" name="pupilpass" id="pupilpass" value="" />
+            </label>
+            <label for="pupilremember">
+              <input class="checkbox" type="checkbox" name="pupilremember" id="pupilremember" checked="checked" />
+              Remember me</label>
+            <p>
+              <input type="submit" name="pupillogin" id="pupillogin" value="Login" />
+              &nbsp;
+              <input type="reset" name="pupilreset" id="pupilreset" value="Reset" />
+            </p>
+          </fieldset>
+        </form>
+      </div>
+      <br class="clear" />
+    </div>
+    <div id="loginpanel">
+      <ul>
+        <li class="left"> </li>
+        <li class="right" id="toggle"><a id="slideit" href="#slidepanel">Log In	Here &raquo;</a><a id="closeit" style="display: none;" href="#slidepanel">Close Panel</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col1">
+  <div id="header">
+    <div id="logo">
+      <h1><a href="index.html">Alumni Portal</a></h1>
+      <p><h4>IIT Indore</h4></p>
+    </div>
+    <div id="centernav">
+    <div id="dropnav">
+        <ul>
+
+            <li id="main">
+            <a href="#">Home</a>
+
+            </li>
+
+            <li id="main">
+            <a href="#">Batches</a>
+                <ul id="subnav">
+                      <li><a href="#">2014</a></li>
+                      <li><a href="#">2013</a></li>
+                      <li><a href="#">2012</a></li>
+                      <li><a href="#">2011</a></li>
+                </ul>            
+            </li>
+
+            <li id="main">
+            <a href="#">Gallery</a>            
+            </li>
+
+            <li id="main">
+            <a href="#">blog & discuss</a>           
+            </li>
+			<li id="main">
+            <a href="#">About us</a>           
+            </li>
+
+        </ul>    
+    </div>
+</div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="breadcrumb">
+    <ul>
+      <li class="first">You Are Here</li>
+      <li>&#187;</li>
+      <li><a href="#">Home</a></li>
+      <li>&#187;</li>
+      <li><a href="#">Grand Parent</a></li>
+      <li>&#187;</li>
+      <li><a href="#">Parent</a></li>
+      <li>&#187;</li>
+      <li class="current"><a href="#">Child</a></li>
+    </ul>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col3">
+  <div id="container">
+    <form  name="registerform" method="post" action="aluminsregister.php">
+<label for="firstname">Name:</label>  <input type="text" name="name" />
+<br />
+<br />
+<label for="firstname">Roll No:</label>   <input type="text" name="rollno" />
+<br />
+<br />
+<label for="firstname">Email address:</label>   <input type="text" name="emailaddr" /><br />
+<br />
+<label for="firstname">Contact no:</label>   <input type="text" name="contactno" /><br />
+<br />
+<label for="firstname">Address:</label> <br />   <input type="textarea" name="addr" />
+<br />
+<br />
+<label for="firstname">Company Name:</label>   <input type="text" name="cname" /><br />
+<br />
+<label for="firstname">Username:</label>   <input type="text" name="uname" />
+<br />
+<br />
+<label for="firstname">Password:</label>   <input type="password" name="password" />
+<br />
+<br />
+
+<label for="firstname">Batch Entered IITI:</label> <select name="batch">
+<option value="2009" selected>2009</option>
+<option value="2010">2010</option>
+</select>
+<br />
+<br />
+
+<input type="submit" name="submit" value="Submit" />
+</form>
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col4">
+  <div id="footer">
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <div class="footbox last">
+      <h2>Lacus interdum</h2>
+      <ul>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li><a href="#">Praesent et eros</a></li>
+        <li><a href="#">Lorem ipsum dolor</a></li>
+        <li><a href="#">Suspendisse in neque</a></li>
+        <li class="last"><a href="#">Praesent et eros</a></li>
+      </ul>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col5">
+  <div id="copyright">
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <br class="clear" />
+  </div>
+</div>
+</body>
+</html>
